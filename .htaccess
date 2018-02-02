@@ -1,0 +1,18 @@
+# BEGIN WPCache
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^(www\.)?localhost [NC]
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteCond %{QUERY_STRING} !.*=.*
+RewriteCond %{HTTP:Cookie} !^.*(comment_author_|wordpress_logged_in|wp-postpass_).*$
+RewriteCond %{HTTP:X-Wap-Profile} !^[a-z0-9\"]+ [NC]
+RewriteCond %{HTTP:Profile} !^[a-z0-9\"]+ [NC]
+RewriteCond %{DOCUMENT_ROOT}/C:\wamp\www\gov_web/wp-content/cache/all/C:\wamp\www\gov_web/$1/index.html -f
+RewriteRule ^(.*) "/C:\wamp\www\gov_web/wp-content/cache/all/C:\wamp\www\gov_web/$1/index.html" [L]
+</IfModule>
+# END WPCache
+
+# BEGIN WordPress
+
+# END WordPress

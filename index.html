@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Live Chat</title>
+    <style>
+      .chat {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  padding: 10px 0px;
+}
+.chat .message {
+  display: inline-block;
+  width: 60%;
+  min-height: 40px;
+  border-radius: 1.3em;
+  padding: 2px 1.3em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  font-size: 1em;
+}
+.chat .message:first-child {
+  margin-top: 0px;
+}
+.chat .message:nth-child(odd) {
+  float: left;
+  margin-left: 20px;
+  background-color: #f1f0f0;
+}
+.chat .message:nth-child(even) {
+  float: right;
+  margin-right: 20px;
+  text-align: right;
+  background-color: #0084ff;
+  color: #fff;
+}
+.chat .message:before {
+  display: block;
+  font-weight: bold;
+  font-size: 0.8em;
+  line-height: 1.2em;
+  border-bottom: 1px solid #fff;
+  content: attr(data-sender);
+}
+.form {
+  display: inline-block;
+  width: 100%;
+  min-height: 40px;
+  padding: 2px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+.form input {
+  border: 1px solid #ccc;
+  border-right: 0px;
+  padding: 10px;
+  width: calc(80%);
+  margin-left: 10px;
+  float: left;
+  margin-right: 0;
+}
+.form button {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 10px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  background-color: #ccc;
+  width: 10%;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  -moz-user-select: none;
+}
+
+    </style>
+  </head>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+  $(function () 
+  {
+    var socket = io();
+    $('form').submit(function()
+	{
+		socket.emit('sender', (!$('#name').val()?"USER":$('#name').val()));
+		socket.emit('new_message', $('#m').val());
+		$('#m').val('');
+		return false;
+    });
+	socket.on('sender', function(msg2)
+	{
+		name=msg2;
+		if(name==$('#name').val())
+		name="ME";
+	});
+	socket.on('new_message', function(msg)
+	{
+		message=msg;
+		$('#messages').append($('<li class="message" data-sender="'+name+'">').text(message));
+		var $target = $('html,body'); 
+		$target.animate({scrollTop: $target.height()}, 1000);
+    });
+  });
+</script>
+  <body>
+	<input id="name" value="" placeholder="Name">
+    <ul id="messages" class="chat"></ul>
+    <form action="" class="form">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+  </body>
+</html>
