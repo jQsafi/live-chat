@@ -75,7 +75,42 @@
   white-space: nowrap;
   -moz-user-select: none;
 }
-
+.page {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background-color: #000;
+  top: 0;
+  left: 0;
+}
+.page .login-form {
+  height: 100px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+.page .login-form #name 
+{
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 400px;
+  font-size: 200%;
+  letter-spacing: 3px;
+  color: #fff;
+  font-weight: 100;
+}
+.page .login-form .title 
+{
+  font-size: 200%;
+  color: #fff;
+  font-weight: 100;
+}
     </style>
   </head>
   <script src="/socket.io/socket.io.js"></script>
@@ -84,6 +119,14 @@
   $(function () 
   {
     var socket = io();
+	$('#name').keydown(function (event) 
+	{
+		if (event.which === 13) 
+		{
+			socket.emit('sender', (!$('#name').val()?"USER":$('#name').val()));
+			$("#name_page").hide();
+		}
+	});
     $('form').submit(function()
 	{
 		socket.emit('sender', (!$('#name').val()?"USER":$('#name').val()));
@@ -107,10 +150,15 @@
   });
 </script>
   <body>
-	<input id="name" value="" placeholder="Name">
     <ul id="messages" class="chat"></ul>
     <form action="" class="form">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
+	<div class="page" id="name_page">
+		<div class="login-form">
+        <h3 class="title">What's your nickname?</h3>
+        <input class="usernameInput" type="text" maxlength="14" id="name"/>
+		</div>
+	</div>
   </body>
 </html>
