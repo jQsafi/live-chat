@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "Shafyat's Live Chat server",
   "dependencies": {
-    "express": "4.13.4",
-    "path": "latest",
+    "express": "^4.16.4",
+    "path": "^0.12.7",
     "socket.io": "^1.7.4"
   },
   "scripts": {
