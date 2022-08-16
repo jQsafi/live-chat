@@ -16,9 +16,14 @@ This is Shafayat Hossain.
 
 - 👨‍💻 All of my projects are available at [shafayat.info](shafayat.info)
 
+
 - 📫 How to reach me **me@shafayat.info**
 
 <h3 align="left">Connect with me:</h3>
+<p align="left">
+<a href="http://shafayat.info" target="blank">My Website</a>
+</p>
+
 <p align="left">
 <a href="https://fb.com/jqsafi" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="jqsafi" height="30" width="40" /></a>
 </p>
