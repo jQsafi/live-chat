@@ -1,0 +1,12 @@
+{
+  "name": "Live-Chat",
+  "repository": "https://github.com/jQsafi/live-chat.git",
+  "dependencies": {
+    "express": "^4.16.4",
+    "path": "^0.12.7",
+    "socket.io": "^1.7.4"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
