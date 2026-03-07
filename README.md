@@ -1,37 +1,51 @@
-# LIVE-CHAT
-Live chat application developed using NodeJS.
-This is Shafayat Hossain.
-# Modules
-. Express
-. Path
-. socket.io
-<h1 align="center">Hi 👋, I'm Shafayat Hossain</h1>
-<h3 align="center">A passionate developer from Bangladesh</h3>
+# Live Chat Application
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=jqsafi&label=Profile%20views&color=0e75b6&style=flat" alt="jqsafi" /> </p>
+A real-time, lightweight chat application built with Node.js, Express, and Socket.io. This project allows users to set a nickname and communicate instantly in a shared chat room.
 
-- 🔭 I’m currently working on [Liquid framework based on PHP](Auto OTP generation by web application)
+## 🚀 Features
 
-- 👯 I’m looking to collaborate on **Google translate**
+- **Real-time Messaging:** Instant message delivery using WebSockets (Socket.io).
+- **Nickname System:** Users can set a custom identity before joining the chat.
+- **Responsive Design:** A simple, clean interface that works on both desktop and mobile devices.
+- **Visual Feedback:** Differentiates between sent and received messages with distinct colors and alignment.
 
-- 👨‍💻 All of my projects are available at [jQsafi.wordpress.com](Here)
+## 🛠️ Tech Stack
 
+- **Backend:** Node.js, Express.js
+- **Real-time Engine:** Socket.io
+- **Frontend:** HTML5, CSS3, jQuery (legacy), JavaScript
 
-- 📫 How to reach me **shafayat@engineer.com**
+## 📦 Installation
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://jQsafi.wordpress.com" target="blank">My Website</a><br>
-  <a href="https://www.facebook.com/jqsafi" target="blank">FaceBook</a>
-</p>
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/jQsafi/live-chat.git
+   cd live-chat
+   ```
 
-<p align="left">
-<a href="https://fb.com/jqsafi" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="jqsafi" height="30" width="40" /></a>
-</p>
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
+3. **Start the server:**
+   ```bash
+   npm start
+   ```
+   The server will be running at `http://localhost:3000`.
 
+## 🚧 Planned Improvements
 
-# Blog posts
-<!-- BLOG-POST-LIST:START -->
+- [ ] **Payload Optimization:** Combine user and message into a single object to prevent race conditions.
+- [ ] **Dependency Updates:** Upgrade to the latest versions of Socket.io and Express for better security and performance.
+- [ ] **Modernization:** Refactor legacy code to use ES6+ syntax and remove jQuery dependencies.
+- [ ] **Enhanced UI/UX:** Add system notifications for user joins/leaves and improved input validation.
 
-<!-- BLOG-POST-LIST:END -->
+## 👨‍💻 Author
+
+**Shafayat Hossain**
+- GitHub: [@jQsafi](https://github.com/jQsafi)
+- Email: [shafayat@engineer.com](mailto:shafayat@engineer.com)
+
+---
+*Developed with ❤️ by Shafayat Hossain*

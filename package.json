@@ -3,9 +3,12 @@
   "version": "0.0.1",
   "description": "Shafyat's Live Chat server",
   "dependencies": {
-    "express": "^4.16.4",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsdom": "^28.1.0",
+    "nedb-promises": "^6.2.3",
     "path": "^0.12.7",
-    "socket.io": "^1.7.4"
+    "socket.io": "^4.8.3"
   },
   "scripts": {
     "start": "node index.js"
