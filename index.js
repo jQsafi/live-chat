@@ -16,9 +16,10 @@ const port = process.env.PORT || 3000;
 const PUTER_JWT = process.env.PUTER_JWT;
 
 // Initialize NoSQL Databases
-const db = Datastore.create({ filename: path.join(__dirname, 'chat.db'), autoload: true });
-const userDb = Datastore.create({ filename: path.join(__dirname, 'users.db'), autoload: true });
-const botDb = Datastore.create({ filename: path.join(__dirname, 'bots.db'), autoload: true });
+const DATA_PATH = process.env.DATABASE_PATH || __dirname;
+const db = Datastore.create({ filename: path.join(DATA_PATH, 'chat.db'), autoload: true });
+const userDb = Datastore.create({ filename: path.join(DATA_PATH, 'users.db'), autoload: true });
+const botDb = Datastore.create({ filename: path.join(DATA_PATH, 'bots.db'), autoload: true });
 
 let bots = [];
 
